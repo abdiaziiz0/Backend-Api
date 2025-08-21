@@ -3,7 +3,11 @@ const app = express()
 const PORT = 2525
 require ("dotenv").config()
 require('./config/data-base')
+const cors = require('cors')
+
 const ProductRoute = require("./router/product.route");
+
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.json({
